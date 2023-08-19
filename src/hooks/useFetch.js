@@ -14,14 +14,13 @@ const useFetch = (endpoint, query) => {
       'X-RapidAPI-Key': '2dda9e5412msh21b5f1e18bb417ap1a28dajsn4737ff9217f8',
       'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
     },
-    params: { ...query }
+    params: { ...query },
   }
   const fetchData = async () => {
     setIsLoading(true)
 
     try {
-      const response = await axios.request
-        (options);
+      const response = await axios.request(options);
       setData(response.data.data);
       setIsLoading(false);
 
@@ -43,6 +42,7 @@ const useFetch = (endpoint, query) => {
     setIsLoading(true)
     fetchData()
   }
+
   return {
     data,
     isLoading,
